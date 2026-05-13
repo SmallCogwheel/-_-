@@ -49,7 +49,7 @@ function calculateCaffeine() {
     limit = 200;
   } else if (userType === "teen") {
     limit = Math.floor(weight * 3);
-  } else {
+  } else if (userType === "adult") {
     if (weight < 50) {
       limit = 300;
     } else if (weight >= 70) {
