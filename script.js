@@ -30,6 +30,7 @@ function updateSizes() {
       sizeSelect.appendChild(opt);
     });
   }
+  calculateCaffeine();
 }
 
 function calculateCaffeine() {
@@ -72,4 +73,10 @@ function calculateCaffeine() {
 }
 
 drinkSelect.addEventListener("change", updateSizes);
+sizeSelect.addEventListener("change", calculateCaffeine);
+countInput.addEventListener("change", calculateCaffeine);
+countInput.addEventListener("input", calculateCaffeine);
+weightInput.addEventListener("change", calculateCaffeine);
+weightInput.addEventListener("input", calculateCaffeine);
+userTypeSelect.addEventListener("change", calculateCaffeine);
 window.onload = loadDrinks;
