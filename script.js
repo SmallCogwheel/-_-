@@ -59,17 +59,36 @@ function calculateCaffeine() {
   progressFill.style.height = `${displayPercent}%`;
   progressText.innerText = `${caffeine} / ${limit}mg (${percent.toFixed(1)}%)`;
 
-  if (percent >= 100) {
+  // 색상 결정: 안전(초록) < 80%, 조심(주황) 80-90%, 위험(빨강) >= 90%
+  if (percent >= 90) {
     progressFill.style.background = "linear-gradient(to top, #ef4444, #f87171)";
     progressFill.style.boxShadow = "0 0 15px rgba(239, 68, 68, 0.5)";
+  } else if (percent >= 80) {
+    progressFill.style.background = "linear-gradient(to top, #f59e0b, #fbbf24)";
+    progressFill.style.boxShadow = "0 0 15px rgba(245, 158, 11, 0.5)";
   } else {
     progressFill.style.background = "linear-gradient(to top, #10b981, #34d399)";
     progressFill.style.boxShadow = "0 0 15px rgba(16, 185, 129, 0.5)";
   }
 
   caffeineText.innerText = `총 카페인: ${caffeine}mg`;
-  limitText.innerText = `권장량: ${limit}mg (${caffeine > limit ? "⚠️ 초과" : "✅ 정상"})`;
-  limitText.style.color = caffeine > limit ? "#ef4444" : "#9ca3af";
+  
+  let statusEmoji = "✅ 안전";
+  if (percent >= 90) {
+    statusEmoji = "🔴 위험";
+  } else if (percent >= 80) {
+    statusEmoji = "🟠 조심";
+  }
+  
+  limitText.innerText = `권장량: ${limit}mg (${statusEmoji})`;
+  
+  if (percent >= 90) {
+    limitText.style.color = "#ef4444";
+  } else if (percent >= 80) {
+    limitText.style.color = "#f59e0b";
+  } else {
+    limitText.style.color = "#9ca3af";
+  }
 }
 
 drinkSelect.addEventListener("change", updateSizes);
