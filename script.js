@@ -48,9 +48,15 @@ function calculateCaffeine() {
   if (userType === "pregnant") {
     limit = 200;
   } else if (userType === "teen") {
-    limit = Math.floor(weight * 2.5);
+    limit = Math.floor(weight * 3);
   } else {
-    if (weight < 50) limit = 300;
+    if (weight < 50) {
+      limit = 300;
+    } else if (weight >= 70) {
+      limit = Math.floor(weight * 6);
+    } else {
+      limit = 400;
+    }
   }
 
   const percent = (caffeine / limit) * 100;
