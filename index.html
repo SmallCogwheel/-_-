@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>카페인 계산기</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="container">
+      <h1>카페인 계산기</h1>
+
+      <div class="row">
+        <select id="userTypeSelect">
+          <option value="adult">성인</option>
+          <option value="teen">청소년</option>
+          <option value="pregnant">임산부</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <select id="drinkSelect"></select>
+        <select id="sizeSelect"></select>
+        <input type="number" id="countInput" value="1" min="1" />
+      </div>
+
+      <div class="weight-box">
+        <input type="number" id="weightInput" value="70" />
+        <span class="unit-inside">kg</span>
+      </div>
+
+      <button onclick="calculateCaffeine()">계산하기</button>
+
+      <div class="result">
+        <div id="caffeineText">총 카페인: 0mg</div>
+        <div id="limitText">권장량: -</div>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-text" id="progressText">0 / 400mg</div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
