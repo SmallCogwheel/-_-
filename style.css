@@ -92,28 +92,6 @@ select:focus, input:focus {
   pointer-events: none;
 }
 
-button {
-  width: 100%;
-  padding: 16px;
-  border: none;
-  border-radius: 14px;
-  background: #10b981;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.1s, background 0.2s;
-  margin-bottom: 20px;
-}
-
-button:hover {
-  background: #059669;
-}
-
-button:active {
-  transform: scale(0.98);
-}
-
 .result {
   padding: 20px;
   background: #111827;
