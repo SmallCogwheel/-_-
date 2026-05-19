@@ -1,218 +1,36 @@
-/* ===================== */
-/* 기본 설정 */
-/* ===================== */
-* {
-  box-sizing: border-box;
-  font-family: 'Pretendard', sans-serif;
-}
-
 body {
   margin: 0;
-  background: radial-gradient(circle at top left, #1e293b, #0f172a);
-  color: #f8fafc;
+  font-family: 'Segoe UI', sans-serif;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  min-height: 100vh;
-}
-
-/* ===================== */
-/* 전체 앱 */
-/* ===================== */
-.app {
-  display: flex;
-  gap: 20px;
-  align-items: stretch;
-
-  animation: fadeIn 0.6s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===================== */
-/* 메인 카드 */
-/* ===================== */
-.container {
-  width: 380px;
-
-  background: rgba(31, 41, 55, 0.8);
-  backdrop-filter: blur(10px);
-
-  padding: 32px;
-
-  border-radius: 24px;
-
-  border: 1px solid rgba(255, 255, 255, 0.1);
-
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-
-h1 {
-  margin: 0 0 28px 0;
-
-  font-size: 24px;
-  text-align: center;
-
-  background: linear-gradient(to right, #10b981, #3b82f6);
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* ===================== */
-/* 입력 영역 */
-/* ===================== */
-.row {
-  display: flex;
-  gap: 8px;
-
-  margin-bottom: 16px;
-  width: 100%;
-}
-
-select,
-input {
-  flex: 1;
-  min-width: 0;
-
-  padding: 12px 8px;
-
-  border: 1px solid #374151;
-  border-radius: 12px;
-
-  background: #111827;
+  background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
   color: white;
 
-  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 
-  transition: border-color 0.2s;
-}
+  gap: 30px;
 
-#countInput {
-  flex: 0.6;
-}
-
-select:focus,
-input:focus {
-  outline: none;
-  border-color: #10b981;
+  padding-top: 80px;
 }
 
 /* ===================== */
-/* 몸무게 입력 */
+/* 제목 */
 /* ===================== */
-.weight-box {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.weight-box input {
+h1 {
+  text-align: center;
   width: 100%;
-  padding-right: 40px;
-}
+  margin: 0;
 
-.unit-inside {
-  position: absolute;
+  position: fixed;
+  top: 15px;
+  left: 0;
 
-  right: 16px;
-  top: 50%;
+  font-size: 28px;
 
-  transform: translateY(-50%);
-
-  color: #6b7280;
-  font-size: 13px;
+  z-index: 10;
 
   pointer-events: none;
-}
-
-/* ===================== */
-/* 결과 박스 */
-/* ===================== */
-.result {
-  padding: 20px;
-
-  background: #111827;
-
-  border-radius: 16px;
-  border-left: 4px solid #10b981;
-}
-
-#caffeineText {
-  font-weight: bold;
-  font-size: 18px;
-
-  margin-bottom: 5px;
-}
-
-#limitText {
-  font-size: 14px;
-  color: #9ca3af;
-}
-
-/* ===================== */
-/* 사이드 프로그레스 */
-/* ===================== */
-.side {
-  width: 100px;
-
-  background: rgba(31, 41, 55, 0.8);
-
-  border-radius: 24px;
-
-  padding: 20px 10px;
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.progress-bar {
-  width: 20px;
-  height: 250px;
-
-  background: #111827;
-
-  border-radius: 10px;
-
-  display: flex;
-  align-items: flex-end;
-
-  overflow: hidden;
-}
-
-.progress-fill {
-  width: 100%;
-  height: 0%;
-
-  background: linear-gradient(to top, #10b981, #34d399);
-
-  transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.progress-text {
-  margin-top: 15px;
-
-  font-size: 11px;
-  color: #9ca3af;
-
-  text-align: center;
-  word-break: keep-all;
 }
 
 /* ===================== */
@@ -243,6 +61,8 @@ input:focus {
 
   border-radius: 50%;
 
+  background: white;
+
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -251,7 +71,7 @@ input:focus {
 .github-btn:hover img {
   transform: scale(1.1);
 
-  box-shadow: 0 0 15px rgba(255,255,255,0.25);
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
 
 /* 툴팁 */
@@ -290,29 +110,196 @@ input:focus {
 }
 
 /* ===================== */
+/* 게임 박스 */
+/* ===================== */
+.game-box {
+  background: rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 20px;
+
+  width: 420px;
+  padding: 30px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* ===================== */
+/* 로그 박스 */
+/* ===================== */
+.log-box {
+  width: 300px;
+  height: 400px;
+
+  overflow-y: auto;
+
+  background: rgba(0,0,0,0.4);
+
+  border-radius: 15px;
+
+  padding: 15px;
+}
+
+/* 스크롤바 */
+.log-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.log-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.log-box::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.log-box::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* 로그 제목 */
+.log-box h2 {
+  margin-top: 0;
+
+  font-size: 20px;
+
+  border-bottom: 1px solid #aaa;
+
+  padding-bottom: 5px;
+}
+
+/* 로그 내용 */
+.log {
+  font-size: 14px;
+
+  margin-bottom: 8px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+
+  padding-bottom: 5px;
+}
+
+/* ===================== */
+/* 상태 텍스트 */
+/* ===================== */
+#aiChoice {
+  font-size: 22px;
+
+  margin-bottom: 15px;
+
+  color: #ffd369;
+}
+
+#status {
+  font-size: 18px;
+
+  margin-bottom: 20px;
+
+  color: #aaa;
+}
+
+/* ===================== */
+/* 버튼 */
+/* ===================== */
+.buttons button {
+  font-size: 26px;
+
+  margin: 10px;
+  padding: 15px 20px;
+
+  border: none;
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.buttons button:hover {
+  transform: scale(1.1);
+
+  filter: brightness(1.1);
+}
+
+.scissors {
+  background: #ff6b6b;
+}
+
+.paper {
+  background: #4ecdc4;
+}
+
+.rock {
+  background: #5f6caf;
+}
+
+/* ===================== */
+/* 결과 / 점수 */
+/* ===================== */
+#result {
+  margin-top: 20px;
+
+  font-size: 22px;
+
+  min-height: 50px;
+}
+
+#score {
+  margin-top: 15px;
+
+  font-size: 16px;
+
+  color: #ddd;
+}
+
+/* ===================== */
+/* footer */
+/* ===================== */
+footer {
+  position: fixed;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  text-align: center;
+
+  padding: 10px 0;
+
+  font-size: 13px;
+  letter-spacing: 0.5px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0)
+  );
+
+  backdrop-filter: blur(5px);
+}
+
+/* ===================== */
 /* 모바일 대응 */
 /* ===================== */
-@media (max-width: 600px) {
-  .app {
+@media (max-width: 850px) {
+  body {
     flex-direction: column;
     align-items: center;
+
+    padding: 90px 15px 80px;
   }
 
-  .side {
-    width: 380px;
-    flex-direction: row;
-
-    gap: 15px;
-  }
-
-  .progress-bar {
+  .game-box,
+  .log-box {
     width: 100%;
-    height: 20px;
-  }
-
-  .progress-fill {
-    height: 100%;
-    width: 0%;
+    max-width: 420px;
   }
 
   .tooltip {
