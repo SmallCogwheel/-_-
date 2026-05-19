@@ -34,7 +34,7 @@ h1 {
 }
 
 /* ===================== */
-/* GitHub 버튼 + 툴팁 */
+/* GitHub 버튼 */
 /* ===================== */
 .github-btn {
   position: fixed;
@@ -42,16 +42,16 @@ h1 {
   top: 15px;
   right: 15px;
 
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
-
-  z-index: 999;
+  justify-content: center;
 
   text-decoration: none;
+
+  z-index: 9999;
 }
 
 /* 아이콘 */
@@ -59,8 +59,9 @@ h1 {
   width: 100%;
   height: 100%;
 
-  border-radius: 50%;
+  display: block;
 
+  border-radius: 50%;
   background: white;
 
   transition:
@@ -71,15 +72,17 @@ h1 {
 .github-btn:hover img {
   transform: scale(1.1);
 
-  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+  box-shadow: 0 0 18px rgba(255,255,255,0.35);
 }
 
+/* ===================== */
 /* 툴팁 */
+/* ===================== */
 .tooltip {
   position: absolute;
 
-  right: 55px;
   top: 50%;
+  right: 60px;
 
   transform: translateY(-50%);
 
@@ -94,19 +97,19 @@ h1 {
   white-space: nowrap;
 
   opacity: 0;
-  visibility: hidden;
+  pointer-events: none;
 
   transition:
     opacity 0.2s ease,
     transform 0.2s ease;
 }
 
-/* hover 시 표시 */
 .github-btn:hover .tooltip {
   opacity: 1;
-  visibility: visible;
 
-  transform: translateY(-50%) translateX(-3px);
+  transform:
+    translateY(-50%)
+    translateX(-4px);
 }
 
 /* ===================== */
